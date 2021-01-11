@@ -1,13 +1,11 @@
 """
 Usage:
   # From tensorflow/models/
-  # Create train data:
-  python3 004_generate_tfrecord.py --images_path=data/tf_wider_train/images --csv_input=data/tf_wider_train/train.csv  --output_path=data/train.record
-  # creates 847.6MB train.record
+  # Create train data tfrecord file:
+  Script: python3 generate_tfrecord.py --images_path=data/tf_wider_train/images --csv_input=data/tf_wider_train/train.csv  --output_path=data/train.record
 
-  # Create test/validation data:
-  python3 004_generate_tfrecord.py --images_path=data/tf_wider_val/images --csv_input=data/tf_wider_val/val.csv  --output_path=data/val.record
-  # creates 213.1MB  val.record
+  # Create test/validation data tfrecord file:
+  Script: python3 generate_tfrecord.py --images_path=data/tf_wider_val/images --csv_input=data/tf_wider_val/val.csv  --output_path=data/val.record
 
   source without adjustments: https://raw.githubusercontent.com/datitran/raccoon_dataset/master/generate_tfrecord.py
 """
@@ -19,7 +17,7 @@ from __future__ import absolute_import
 import os
 import io
 import pandas as pd
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 
 from PIL import Image
 from object_detection.utils import dataset_util # from path
