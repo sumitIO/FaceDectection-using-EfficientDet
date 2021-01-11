@@ -1,0 +1,1 @@
+# Face Dectection using EfficientDet-D0 trained with WIDER_FACE dataset
