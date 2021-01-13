@@ -1,8 +1,9 @@
-# %%time
 import os
 import glob
 import pandas as pd
 import xml.etree.ElementTree as ET
+
+os.chdir('..')
 
 def xml_to_csv(path):
     xml_list = []
