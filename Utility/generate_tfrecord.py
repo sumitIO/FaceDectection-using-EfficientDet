@@ -23,6 +23,8 @@ from PIL import Image
 from object_detection.utils import dataset_util # from path
 from collections import namedtuple, OrderedDict # tf slim
 
+os.chdir('..')
+
 flags = tf.app.flags
 flags.DEFINE_string('csv_input', '', 'Path to the CSV input')
 flags.DEFINE_string('output_path', '', 'Path to output TFRecord')
@@ -88,9 +90,6 @@ def create_tf_example(group, path):
 
 def main(_):
     writer = tf.python_io.TFRecordWriter(FLAGS.output_path)
-    os.chdir('..')
-    print('here')
-    exit()
     path = os.path.join(os.getcwd(), FLAGS.images_path)
     examples = pd.read_csv(FLAGS.csv_input)
     grouped = split(examples, 'filename')
